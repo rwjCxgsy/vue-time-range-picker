@@ -1,11 +1,11 @@
 <template>
-    <div class="time-range" v-if="localShow">
-        <div class="header">
-            <div class="nav">
+    <div class="xg-time-range" v-if="localShow">
+        <div class="xg-header">
+            <div class="xg-nav">
                 <button @click="toggle">取消</button>
                 选择日期            
             </div>
-            <div class="week">
+            <div class="xg-week">
                 <span>日</span>
                 <span>一</span>
                 <span>二</span>
@@ -15,16 +15,16 @@
                 <span>六</span>
             </div>
         </div>
-        <div class="main">
-            <div class="container">
-                <div class="warper">
-                    <div class="month" v-for="(month, index) in days" :key="index">
-                        <div class="year-month">{{month.yearMonth}}</div>
-                        <div class="days">
+        <div class="xg-main">
+            <div class="xg-container">
+                <div class="xg-warper">
+                    <div class="xg-month" v-for="(month, index) in days" :key="index">
+                        <div class="xg-year-month">{{month.yearMonth}}</div>
+                        <div class="xg-days">
                             <div v-for="(item, i) in month.list" :class="classNames(item)" :key="i" @click="select(item, $event)">
-                                <strong class="tips">{{getTips(item)}}</strong>
+                                <strong class="xg-tips">{{getTips(item)}}</strong>
                                 <span>{{item.day}}</span>
-                                <em class="holiday"></em>
+                                <em class="xg-holiday"></em>
                             </div>
                         </div>
                     </div>                
@@ -212,7 +212,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-    .time-range {
+    .xg-time-range {
         background-color: #fff;
         position: fixed;
         top: 0;
@@ -221,14 +221,14 @@ export default {
         height: 100%;
         height: 100vh;
         overflow: hidden;
-        .header {
+        .xg-header {
             position: absolute;
             width: 100%;
             left: 0;
             top: 0;
             height: 75px;
             z-index: 2;
-            .nav {
+            .xg-nav {
                 text-align: center;
                 height: 45px;
                 line-height: 45px;
@@ -255,7 +255,7 @@ export default {
                     border-bottom: 1px solid #ccc;
                 }                
             }
-            .week {
+            .xg-week {
                 display: table;
                 width: 100%;
                 height: 30px;
@@ -276,24 +276,24 @@ export default {
                 }
             }
         }
-        .main {
+        .xg-main {
             height: 100%;
             padding-top: 75px;
             overflow: hidden;
             box-sizing: border-box;
             position: relative;
-            .container {
+            .xg-container {
                 height: 100%;
                 overflow: auto;
             }
-            .year-month {
+            .xg-year-month {
                 text-align: center;
                 height: 30px;
                 line-height: 30px;
                 background-color: rgb(113, 113, 253);
                 color: #fff;
             }
-            .days {
+            .xg-days {
                 &::after {
                     content: ' ';
                     clear: both;
@@ -330,11 +330,11 @@ export default {
                         font-style: normal;
                         font-weight: lighter;
                     }
-                    .holiday {
+                    .xg-holiday {
                         height: 20px;
                         font-size: 12px;
                     }
-                    .tips {
+                    .xg-tips {
                         color: #fff;
                         margin-top: 10px;
                         height: 20px;
