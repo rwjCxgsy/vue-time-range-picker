@@ -11,5 +11,11 @@
     "@vue/cli-service-global": "^3.8.3",
     "less": "^3.9.0",
     "less-loader": "^5.0.0"
-  }
+  },
+  "keywords": [
+    "vue",
+    "picker",
+    "Date",
+    "日期区间选择器"
+  ]
 }
