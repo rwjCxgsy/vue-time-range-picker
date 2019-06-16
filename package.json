@@ -1,0 +1,15 @@
+{
+  "name": "vue-time-range-picker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vue serve ./src/timeRangePicker.vue",
+    "build": "vue build ./src/timeRangePicker.vue"
+  },
+  "dependencies": {
+    "@vue/cli-service-global": "^3.8.3",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0"
+  }
+}
