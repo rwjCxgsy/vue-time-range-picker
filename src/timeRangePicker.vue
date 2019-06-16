@@ -39,7 +39,11 @@ const monthDay = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 export default {
     name: 'timeRangePicker',
     data () {
-        const {maxDay} = this
+        let {maxDay} = this
+        if (maxDay > 300) {
+            console.error('最大不能超过300天，默认90天')
+            maxDay = 90
+        }
         const currentDate = new Date()
         const currentYear = currentDate.getFullYear()
         const currentDateMonth = currentDate.getMonth()
