@@ -2,7 +2,7 @@
 
 ![示例](./src/Gif.gif)
 
-[demo地址]()
+[demo地址](http://47.102.114.90/demo/dist/#/range)
 
 ## 安装
 
