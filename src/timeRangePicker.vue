@@ -103,7 +103,7 @@ export default {
                     return false
                 }
                 this.end = date
-                this.$emit('change', {start, end: date, list: [start, ...this.range, end]})
+                this.$emit('change', {start, end: date, list: [start, ...this.range, date]})
             } else {
                 this.start = date
             }

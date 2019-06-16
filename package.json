@@ -1,6 +1,6 @@
 {
   "name": "vue-time-range-picker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -16,6 +16,7 @@
     "vue",
     "picker",
     "Date",
-    "日期区间选择器"
+    "日期区间选择器",
+    "移动端"
   ]
 }
