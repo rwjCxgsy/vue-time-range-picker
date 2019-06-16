@@ -55,3 +55,19 @@ components: {Range},
 类型：String
 
 > 结束时间描述
+
+#### is-selected-close
+
+类型：Boolean
+
+> 选择完成后是否关闭选择器
+
+### 事件
+
+#### change
+
+返回参数
+
+> start 开始时间
+end 结束时间
+list 时间列表

@@ -63,7 +63,6 @@ export default {
             end = dateRange[1]
         }
         return {
-            localShow: false,
             alldays: [],
             days: [],
             start,
@@ -80,9 +79,7 @@ export default {
     },
     methods: {
         toggle () {
-            const {localShow} = this
-            this.localShow = !localShow
-            this.$emit('input', !localShow)
+            this.localShow = !this.localShow
         },
         select (item, e) {
             const {start, end, today, lastDay} = this
@@ -125,10 +122,21 @@ export default {
         }
     },
     computed: {
+        localShow: {
+            get () {
+                return this.value
+            },
+            set (value) {
+                this.$emit('input', value)
+            }
+        },
         range () {
-            const {start, end, alldays} = this
+            const {start, end, alldays, isSelectedClose} = this
             if (!end) {
                 return []
+            }
+            if (isSelectedClose) {
+                this.localShow = false
             }
             return alldays.filter(v => {
                 return (v > start && v < end)
@@ -136,6 +144,10 @@ export default {
         }
     },
     props: {
+        isSelectedClose: {
+            type: Boolean,
+            default: false
+        },
         maxDay: {
             type: Number,
             default: 90
@@ -163,9 +175,6 @@ export default {
                 this.start = v[0]
                 this.end = v[1]
             }
-        },
-        value (value) {
-            this.localShow = value
         }
     },
     created () {
