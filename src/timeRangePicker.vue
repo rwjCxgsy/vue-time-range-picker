@@ -81,7 +81,7 @@ export default {
         toggle () {
             this.localShow = !this.localShow
         },
-        select (item, e) {
+        select (item) {
             const {start, end, today, lastDay} = this
             if (!item) {
                 return false
@@ -154,7 +154,7 @@ export default {
         },
         dateRange: {
             type: Array,
-            default: []
+            default: () => []
         },
         value: {
             type: Boolean,
