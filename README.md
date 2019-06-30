@@ -1,6 +1,6 @@
 # 基于vue开发的日期区间选择器
 
-![示例](./src/Gif.gif)
+![示例](https://raw.githubusercontent.com/rwjCxgsy/vue-time-range-picker/master/src/GIF.gif)
 
 [demo地址](http://47.102.114.90/demo/dist/#/range)
 
