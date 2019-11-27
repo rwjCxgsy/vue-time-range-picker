@@ -158,7 +158,7 @@ export default {
         },
         value: {
             type: Boolean,
-            default: false
+            default: true
         },
         startText: {
             type: String,
@@ -183,24 +183,27 @@ export default {
         // const {maxDay = 90} = this.props
         const {currentDateMonth, lastDateMonth, currentYear} = this
         let k = currentDateMonth
+        let y = currentYear
         let i = 0
         while (k !== (lastDateMonth + 1)) {
             let o = 1
-            let m = currentYear
-            if (m % 4 === 0) {
+            if (i !==0 && k == 0) {
+                y++
+            }
+            if (y % 4 === 0) {
                 monthDay[1] = 29
             } else {
                 monthDay[1] = 28
             }
-            const day = new Date(`${m}-${k+1}-${o}`).getDay()
+            const day = new Date(`${y}-${k+1}-${o}`).getDay()
             days.push({
-                yearMonth: m + '-' + (k + 1),
+                yearMonth: y + '-' + (k + 1),
                 list: new Array(day).fill(0)
             })
             while(o <= monthDay[k]) {
                 let _k = k+1
                 _k = _k < 10 ? ('0' + _k) : _k 
-                const _date = `${m}-${_k}-${o < 10 ? ('0' + o) : o}`
+                const _date = `${y}-${_k}-${o < 10 ? ('0' + o) : o}`
                 days[i].list.push({
                     day: o,
                     date: _date

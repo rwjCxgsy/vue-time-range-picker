@@ -16,7 +16,9 @@
     "vue",
     "picker",
     "Date",
+    "选择器",
     "日期区间选择器",
     "移动端"
-  ]
+  ],
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
