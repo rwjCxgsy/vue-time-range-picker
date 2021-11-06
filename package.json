@@ -1,6 +1,6 @@
 {
   "name": "vue-time-range-picker",
-  "version": "1.0.9",
+  "version": "1.2.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -18,7 +18,9 @@
     "Date",
     "选择器",
     "日期区间选择器",
-    "移动端"
+    "移动端",
+    "全屏"
   ],
+  "homepage": "https://github.com/owner/project#readme",
   "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }

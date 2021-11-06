@@ -24,7 +24,7 @@
                             <div v-for="(item, i) in month.list" :class="classNames(item)" :key="i" @click="select(item, $event)">
                                 <strong class="xg-tips">{{getTips(item)}}</strong>
                                 <span>{{item.day}}</span>
-                                <em class="xg-holiday"></em>
+                                <em class="xg-holiday" :style="{color: getHoliday(item.date, 'color')}">{{getHoliday(item.date, 'message')}}</em>
                             </div>
                         </div>
                     </div>                
@@ -78,6 +78,11 @@ export default {
         }
     },
     methods: {
+        getHoliday (day, type) {
+            const { holiday } = this
+            const _h = holiday.find(v => v.date === day)
+            return _h && _h[type]
+        },
         toggle () {
             this.localShow = !this.localShow
         },
@@ -101,6 +106,7 @@ export default {
                 }
                 this.end = date
                 this.$emit('change', {start, end: date, list: [start, ...this.range, date]})
+                this.localShow = false
             } else {
                 this.start = date
             }
@@ -131,12 +137,9 @@ export default {
             }
         },
         range () {
-            const {start, end, alldays, isSelectedClose} = this
+            const {start, end, alldays} = this
             if (!end) {
                 return []
-            }
-            if (isSelectedClose) {
-                this.localShow = false
             }
             return alldays.filter(v => {
                 return (v > start && v < end)
@@ -144,6 +147,10 @@ export default {
         }
     },
     props: {
+        holiday: {
+            type: Array,
+            default: () => []
+        },
         isSelectedClose: {
             type: Boolean,
             default: false
@@ -345,6 +352,8 @@ export default {
                     .xg-holiday {
                         height: 20px;
                         font-size: 12px;
+                        font-weight: bold;
+                        vertical-align: middle;
                     }
                     .xg-tips {
                         color: #fff;
