@@ -8,7 +8,7 @@
     "build": "vue build ./src/timeRangePicker.vue"
   },
   "dependencies": {
-    "@vue/cli-service-global": "^3.8.3",
+    "@vue/cli-service-global": "^4.5.19",
     "less": "^3.9.0",
     "less-loader": "^5.0.0"
   },
